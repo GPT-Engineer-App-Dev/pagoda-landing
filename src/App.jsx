@@ -1,17 +1,32 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Home } from "lucide-react";
+import { Home, Info, Map, Calendar } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Layout from "./layouts/default"; // available: default, navbar, sidebar
+import Layout from "./layouts/navbar"; // Changed to navbar layout
 import Index from "./pages/Index.jsx";
 const queryClient = new QueryClient();
 
 export const navItems = [
   {
-    title: "Home", // Feel free to change this to your liking
+    title: "Home",
     to: "/",
     icon: <Home className="h-4 w-4" />,
+  },
+  {
+    title: "About China",
+    to: "/about",
+    icon: <Info className="h-4 w-4" />,
+  },
+  {
+    title: "Destinations",
+    to: "/destinations",
+    icon: <Map className="h-4 w-4" />,
+  },
+  {
+    title: "Plan Your Trip",
+    to: "/plan",
+    icon: <Calendar className="h-4 w-4" />,
   },
 ];
 
